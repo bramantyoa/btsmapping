@@ -29,7 +29,13 @@ echo '<markers>';
 // Iterate through the rows, printing XML nodes for each
 while ($row = mysqli_fetch_array($result)){
   // ADD TO XML DOCUMENT NODE
-  echo '<marker name="' . parseToXML($row['name']) . '" address="'.parseToXML($row['address']).'" lat="'.$row['lat'].'" lng="'.$row['lng'].'" />';
+  echo '<marker ';
+  echo 'name="' . parseToXML($row['name']) . '" ';
+  echo 'address="' . parseToXML($row['address']) . '" ';
+  echo 'lat="' . $row['lat'] . '" ';
+  echo 'lng="' . $row['lng'] . '" ';
+  echo 'type="' . $row['type'] . '" ';
+  echo '/>';
   
 }
 
