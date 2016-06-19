@@ -16,6 +16,7 @@
         <title>BTS Mapping Server Page</title>
 
         <!-- Custom Style -->
+        <!-- Interactive Google Map as Background -->
         <style>
             #googlemaps { 
                 height: 100%; 
@@ -37,10 +38,23 @@
                 opacity: .45; /* Set the opacity for a slightly transparent Google Form */ 
                 color: white;
             }
+
+            .parent {
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+            }
+
+            .child {
+                position: relative;
+                top: 25%;
+                transform: translateY(-50%);
+            }
         </style>
         <!-- Custom style ends -->
 
         <!-- Custom script -->
+        <!-- Interactive Google Map as Background -->
         <!-- Include the Google Maps API library - required for embedding maps -->
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         
@@ -51,7 +65,7 @@
             var latLng = new google.maps.LatLng(position[0], position[1]);     
 
             var mapOptions = {
-                zoom: 15, // initialize zoom level - the max value is 21
+                zoom: 14, // initialize zoom level - the max value is 21
                 streetViewControl: false, // hide the yellow Street View pegman
                 scaleControl: true, // allow users to zoom the Google Map
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -85,9 +99,8 @@
 
         <!-- Contents start -->
         <div id="googlemaps"></div>
-        <div class="ui center aligned container row">
-            <div class="column four"></div>
-            <div class="ui segment column four">
+        <div class="ui grid container center aligned three column child">
+            <div class="ui column segment">
                 <h1>BTS Mapping Server Page</h1>
                 <form class="ui form">
                     <div class="field">
@@ -103,7 +116,6 @@
                 </div>
                 <button class="ui blue button">See data on map</button>
             </div>
-            <div class="column four"></div>
         </div>
         <!-- Contents end -->
 
