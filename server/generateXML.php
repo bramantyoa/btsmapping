@@ -12,7 +12,8 @@ function parseToXML($htmlStr)
 }
 
 // Opens a connection to a MySQL server
-$connection = mysqli_connect("localhost", "root", "", "bts");
+$db = new DB_Connection();
+$connection = $db -> getConnection();
 
 // Select all the rows in the markers table
 $query = "SELECT * FROM btsloc WHERE 1";
@@ -29,7 +30,13 @@ echo '<markers>';
 // Iterate through the rows, printing XML nodes for each
 while ($row = mysqli_fetch_array($result)){
   // ADD TO XML DOCUMENT NODE
-  echo '<marker name="' . parseToXML($row['name']) . '" address="'.parseToXML($row['address']).'" lat="'.$row['lat'].'" lng="'.$row['lng'].'" />';
+  echo '<marker ';
+  echo 'name="' . parseToXML($row['name']) . '" ';
+  echo 'address="' . parseToXML($row['address']) . '" ';
+  echo 'lat="' . $row['lat'] . '" ';
+  echo 'lng="' . $row['lng'] . '" ';
+  echo 'type="' . $row['type'] . '" ';
+  echo '/>';
   
 }
 

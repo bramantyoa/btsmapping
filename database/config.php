@@ -1,8 +1,8 @@
 <?php
 
-define ("host", "localhost");
-define ("user", "root");
-define ("password", "");
-define ("db", "bts");
+define('hostname', 'localhost');
+define('user', 'root');
+define('password', '');
+define('db_name', 'bts');
 
 ?>
