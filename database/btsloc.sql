@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2016 at 03:02 AM
+-- Generation Time: Jun 19, 2016 at 11:48 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -31,16 +31,17 @@ CREATE TABLE `btsloc` (
   `name` varchar(15) NOT NULL,
   `address` varchar(100) NOT NULL,
   `lng` float(10,6) NOT NULL,
-  `lat` float(10,6) NOT NULL
+  `lat` float(10,6) NOT NULL,
+  `type` char(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `btsloc`
 --
 
-INSERT INTO `btsloc` (`id`, `name`, `address`, `lng`, `lat`) VALUES
-(1, 'XL 1', 'Jl. RTA Milono KM 6,5 Kel. Kereng Bengkirai, Kec. Sebangau', 113.919907, -2.271814),
-(2, 'XL 2', 'Jl. Maher Mahar/Panglima-Batur, KM 18, RT 05/RW 01 Kel. Klampangan, Kec. Sebangau', 114.011772, -2.280795);
+INSERT INTO `btsloc` (`id`, `name`, `address`, `lng`, `lat`, `type`) VALUES
+(1, 'BD_C_RIWUT_ID', 'Jl. RTA Milono KM 6,5 Kel. Kereng Bengkirai, Kec. Sebangau', 113.919907, -2.271814, 'XL'),
+(2, 'BARENGBENG', 'Jl. Maher Mahar/Panglima-Batur, KM 18, RT 05/RW 01 Kel. Klampangan, Kec. Sebangau', 114.011772, -2.280795, 'XL');
 
 --
 -- Indexes for dumped tables

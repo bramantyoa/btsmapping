@@ -12,7 +12,8 @@ function parseToXML($htmlStr)
 }
 
 // Opens a connection to a MySQL server
-$connection = mysqli_connect("localhost", "root", "", "bts");
+$db = new DB_Connection();
+$connection = $db -> getConnection();
 
 // Select all the rows in the markers table
 $query = "SELECT * FROM btsloc WHERE 1";
