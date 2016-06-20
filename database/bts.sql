@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2016 at 11:48 AM
+-- Generation Time: Jun 20, 2016 at 06:36 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -43,6 +43,25 @@ INSERT INTO `btsloc` (`id`, `name`, `address`, `lng`, `lat`, `type`) VALUES
 (1, 'BD_C_RIWUT_ID', 'Jl. RTA Milono KM 6,5 Kel. Kereng Bengkirai, Kec. Sebangau', 113.919907, -2.271814, 'XL'),
 (2, 'BARENGBENG', 'Jl. Maher Mahar/Panglima-Batur, KM 18, RT 05/RW 01 Kel. Klampangan, Kec. Sebangau', 114.011772, -2.280795, 'XL');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cred`
+--
+
+CREATE TABLE `cred` (
+  `id` int(11) NOT NULL,
+  `login` char(8) NOT NULL,
+  `word` char(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cred`
+--
+
+INSERT INTO `cred` (`id`, `login`, `word`) VALUES
+(1, 'admin', 'password');
+
 --
 -- Indexes for dumped tables
 --
@@ -54,6 +73,12 @@ ALTER TABLE `btsloc`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `cred`
+--
+ALTER TABLE `cred`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -62,6 +87,11 @@ ALTER TABLE `btsloc`
 --
 ALTER TABLE `btsloc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `cred`
+--
+ALTER TABLE `cred`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
