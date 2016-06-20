@@ -1,5 +1,5 @@
 <?php
-require("database/connection.php");
+require("../database/connection.php");
 
 function parseToXML($htmlStr)
 {

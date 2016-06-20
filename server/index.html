@@ -102,19 +102,19 @@
         <div class="ui grid container center aligned three column child">
             <div class="ui column segment">
                 <h1>BTS Mapping Server Page</h1>
-                <form class="ui form">
+                <form class="ui form" action="process/login.php" method="POST">
                     <div class="field">
                         <input type="text" name="_username" placeholder="Username">
                     </div>
                     <div class="field">
                         <input type="password" name="_password" placeholder="Password">
                     </div>
-                    <button class="ui positive button" type="submit" value="submit">Login</button>
+                    <button class="ui positive button" name="_login" type="submit" value="submit" >Login</button>
                 </form>
                 <div class="ui horizontal divider">
                     Or
                 </div>
-                <button class="ui blue button">See data on map</button>
+                <a class="ui blue button" href="../map.html">See data on map</a>
             </div>
         </div>
         <!-- Contents end -->
