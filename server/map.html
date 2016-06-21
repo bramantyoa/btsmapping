@@ -21,11 +21,8 @@
     //<![CDATA[
 
     var customIcons = {
-      restaurant: {
-        icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
-      },
-      bar: {
-        icon: 'http://labs.google.com/ridefinder/images/mm_20_red.png'
+      XL: {
+        icon: 'https://s26.postimg.org/pufxc82p5/Map_Icon.png'
       }
     };
 
@@ -44,13 +41,16 @@
         for (var i = 0; i < markers.length; i++) {
           var name = markers[i].getAttribute("name");
           var address = markers[i].getAttribute("address");
+          var type = markers[i].getAttribute("type");
           var point = new google.maps.LatLng(
               parseFloat(markers[i].getAttribute("lat")),
               parseFloat(markers[i].getAttribute("lng")));
           var html = "<b>" + name + "</b> <br/>" + address;
+          var icon = customIcons[type] || {};
           var marker = new google.maps.Marker({
             map: map,
-            position: point
+            position: point,
+            icon: icon.icon
           });
           bindInfoWindow(marker, map, infoWindow, html);
         }
