@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head starts -->
+    <head>
+        <!-- Metas -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <!-- Links -->
+        <link rel="stylesheet" type="text/css" href="css/pills.min.css">
+        <link rel="stylesheet" type="text/css" href="css/semantic/dist/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Scripts -->
+        <script src="css/semantic/dist/semantic.min.js"></script>
+
+        <title>Halaman </title>
+
+    </head>
+    <!-- Head ends -->
+
+    <!-- Body starts -->
+    <body>
+        <!-- Header starts -->
+        <header></header>
+        <!-- Header ends -->
+
+        <!-- Contents start -->
+        <div id="googlemaps"></div>
+        <div class="ui grid container center aligned three column child">
+            <div class="ui column segment">
+                <h1>BTS Mapping Server Page</h1>
+                <form class="ui form" action="process/login.php" method="POST">
+                    <div class="field">
+                        <input type="text" name="_username" placeholder="Username">
+                    </div>
+                    <div class="field">
+                        <input type="password" name="_password" placeholder="Password">
+                    </div>
+                    <button class="ui positive button" name="_login" type="submit" value="submit" >Login</button>
+                </form>
+                <div class="ui horizontal divider">
+                    Or
+                </div>
+                <a class="ui blue button" href="map.html">See data on map</a>
+            </div>
+        </div>
+        <!-- Contents end -->
+
+    </body>
+    <!-- Body ends -->
+</html>
