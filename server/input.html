@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head starts -->
+    <head>
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="css/semantic/dist/semantic.min.js"></script>
+        
+        <!-- Metas -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <!-- Links -->
+        <link rel="stylesheet" type="text/css" href="css/pills.min.css">
+        <link rel="stylesheet" type="text/css" href="css/semantic/dist/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <title>BTS Mapping Server Page</title>
+
+        <!-- Custom Scripts -->
+        <script type="text/javascript">
+        function addRow(tableID) {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+            var colCount = table.rows[0].cells.length;
+            for(var i=0; i<colCount; i++) {
+                var newcell = row.insertCell(i);
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+            }
+        }
+
+        function deleteRow(tableID) {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+            for(var i=0; i<rowCount; i++) {
+                var row = table.rows[i];
+                var chkbox = row.cells[0].childNodes[0];
+                if(null != chkbox && true == chkbox.checked) {
+                    if(rowCount <= 1) { 						// limit the user from removing all the fields
+                        alert("Cannot Remove All Fields.");
+                        break;
+                    }
+                    table.deleteRow(i);
+                    rowCount--;
+                    i--;
+                }
+            }
+        }
+        </script>
+        <!-- /Custom Scripts -->
+
+    </head>
+    <!-- Head ends -->
+
+    <!-- Body starts -->
+    <body>
+        <!-- Header starts -->
+        <header></header>
+        <!-- Header ends -->
+
+        <!-- Contents start -->
+        <div id="googlemaps"></div>
+        <div class="ui grid container center aligned">
+            <div class="fourteen wide column">
+                <form action="" class="ui form">
+                    <input type="button" class="ui button blue" onclick="addRow('dataTable')" value="Add More Entry">
+                    <input type="button" class="ui button red" onclick="deleteRow('dataTable')" value="Remove Entry">
+                    <table id="dataTable" class="ui single line table">
+                        <tbody>
+                            <tr>
+                                <td><input class="ui checkbox" type="checkbox" name="_chk[]" checked="checked"></td>
+                                <td><input type="text" name="_name[]" placeholder="Site Name"></td>
+                                <td><input type="text" name="_address[]" placeholder="Address"></td>
+                                <td><input type="text" name="_lng[]" placeholder="Longitude"></td>
+                                <td><input type="text" name="_lat[]" placeholder="Latitude"></td>
+                                <td>
+                                    <select name="_type">
+                                        <option value="">Provider</option>
+                                        <option value="Telkomsel">Telkomsel</option>
+                                        <option value="XL">XL</option>
+                                        <option value="Indosat">Indosat</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <!-- Contents end -->
+
+    </body>
+    <!-- Body ends -->
+</html>
