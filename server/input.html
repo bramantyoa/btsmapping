@@ -63,19 +63,19 @@
         <div id="googlemaps"></div>
         <div class="ui grid container center aligned">
             <div class="fourteen wide column">
-                <form action="" class="ui form">
+                <form action="process/add.php" class="ui form" method="POST">
                     <input type="button" class="ui button blue" onclick="addRow('dataTable')" value="Add More Entry">
                     <input type="button" class="ui button red" onclick="deleteRow('dataTable')" value="Remove Entry">
                     <table id="dataTable" class="ui single line table">
                         <tbody>
                             <tr>
                                 <td><input class="ui checkbox" type="checkbox" name="_chk[]" checked="checked"></td>
-                                <td><input type="text" name="_name[]" placeholder="Site Name"></td>
-                                <td><input type="text" name="_address[]" placeholder="Address"></td>
-                                <td><input type="text" name="_lng[]" placeholder="Longitude"></td>
-                                <td><input type="text" name="_lat[]" placeholder="Latitude"></td>
+                                <td><input type="text" name="NAME[]" placeholder="Site Name"></td>
+                                <td><input type="text" name="ADDR[]" placeholder="Address"></td>
+                                <td><input type="text" name="LNG[]" placeholder="Longitude"></td>
+                                <td><input type="text" name="LAT[]" placeholder="Latitude"></td>
                                 <td>
-                                    <select name="_type">
+                                    <select name="TYPE[]">
                                         <option value="">Provider</option>
                                         <option value="Telkomsel">Telkomsel</option>
                                         <option value="XL">XL</option>
@@ -85,6 +85,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    <input class="ui button blue" type="submit" value="Submit" />
                 </form>
             </div>
         </div>
