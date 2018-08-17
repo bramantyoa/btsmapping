@@ -1,4 +1,6 @@
 # custom-bts-mapping
-Pemetaan Base Transceiver Station dari Provider XL di kota Palangkaraya, Kalimantan Tengah berdasarkan data pada dokumen http://kalteng.go.id/userfiles/file/DINAS/DISHUB/Postel/Menara%20Telekomunikasi%202014.pdf
+This is a Geographic Information System project from Airlangga University.
+We mapped XL's Base Transceiver Station in Palangkaraya, Indonesia. Data used in this application can be found in: 
+http://kalteng.go.id/userfiles/file/DINAS/DISHUB/Postel/Menara%20Telekomunikasi%202014.pdf
 
-Untuk mencoba silahkan klik link: http://customcellmapping.hol.es
+
